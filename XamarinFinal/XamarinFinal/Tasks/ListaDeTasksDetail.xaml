@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinFinal.ListaDeTasksDetail"
+             Title="{Binding TaskSelecionado.name}">
+    <StackLayout>
+        <Label Text="Nome da Tarefa" />
+        <Entry Placeholder="Nome da Tarefa" HorizontalOptions="Fill" Text="{Binding TaskSelecionado.name, Mode=TwoWay}" />
+        <Picker ItemsSource="{Binding ListaStatus}" HorizontalOptions="Fill"  SelectedItem="{Binding TaskSelecionado.status, Mode=TwoWay}"/>
+        <StackLayout HorizontalOptions="Fill">
+            <Button Text="Salvar" Command="{Binding SaveTask}" />
+            <Button Text="{Binding ButtonText}" Command="{Binding DeleteTask}" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

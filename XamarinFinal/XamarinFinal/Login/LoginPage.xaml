@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinFinal.LoginPage">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Fill" VerticalOptions="Center" Margin="30, 0">
+            <Entry Placeholder="Login" Text="{Binding Login, Mode=TwoWay}" 
+                VerticalOptions="Center" 
+                HorizontalOptions="Fill"
+                Keyboard="Email" />
+            <Entry Placeholder="Password" 
+                   Text="{Binding Senha, Mode=TwoWay}" 
+                   VerticalOptions="Center"                   
+                   HorizontalOptions="Fill"
+                   IsPassword="True"
+                   />
+            <Label Text="{Binding Erro}" HorizontalOptions="Center" TextColor="Red" FontAttributes="Bold" />
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Button Command="{Binding Autenticar}" Text="Autenticar" IsVisible="{Binding BotaoVisivel}"/>
+                <Button Command="{Binding Registrar}" Text="Registrar" IsVisible="{Binding BotaoVisivel}"/>
+            </StackLayout>
+            <ActivityIndicator IsRunning="{Binding Ocupado}" IsVisible="{Binding Ocupado}" 
+                               MinimumHeightRequest="30" MinimumWidthRequest="30" 
+                               VerticalOptions="Center" HorizontalOptions="Center"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
